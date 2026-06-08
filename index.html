@@ -286,36 +286,37 @@
 </section>
 
 <section id="contact" class="contact-section">
-  <div class="container contact-grid">
-    <div>
-      <span class="section-label light">Get in touch</span>
-      <h2>Let's build something <em>great</em> together</h2>
-      <p>Open to internships, networking opportunities, and technology collaborations.</p>
-    </div>
-    <div class="contact-links">
-    <a href="https://mail.google.com/mail/?view=cm&to=jappierefilwe@gmail.com" 
-   target="_blank" rel="noopener" class="contact-link">
-        <span class="contact-link-label">Personal Email</span>
-        <span class="contact-link-value">jappierefilwe@gmail.com ↗</span>
-      </a>
-      <a href="https://github.com/FIFFIE-droid" target="_blank" rel="noopener" class="contact-link">
-        <span class="contact-link-label">GitHub</span>
-        <span class="contact-link-value">github.com/FIFFIE-droid ↗</span>
-      </a>
-      <a href="https://linkedin.com/in/refilwe-jappie" target="_blank" rel="noopener" class="contact-link">
-        <span class="contact-link-label">LinkedIn</span>
-        <span class="contact-link-value">linkedin.com/in/refilwe-jappie ↗</span>
-      </a>
-      <a href="tel:+26774839173" class="contact-link">
-        <span class="contact-link-label">Phone</span>
-        <span class="contact-link-value">+267 74 839 173 ↗</span>
-      </a>
-      <div class="contact-link no-link">
-        <span class="contact-link-label">Location</span>
-        <span class="contact-link-value">Botswana 🇧🇼</span>
-      </div>
-    </div>
-  </div>
+  <div class="contact-links">
+  <form id="contactForm" class="contact-form">
+    <input
+      type="text"
+      id="name"
+      placeholder="Your Name"
+      required
+    >
+
+    <input
+      type="email"
+      id="email"
+      placeholder="Your Email"
+      required
+    >
+
+    <textarea
+      id="message"
+      placeholder="Your Message"
+      rows="6"
+      required
+    ></textarea>
+
+    <button type="submit" class="btn-primary">
+      Send Message
+    </button>
+
+    <p id="status"></p>
+  </form>
+</div>
+  
 </section>
 </main>
 <footer>
@@ -324,6 +325,6 @@
 </footer>
 
 <button id="topBtn" aria-label="Scroll to top">↑</button>
-<script src="script.js"defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>

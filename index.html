@@ -287,10 +287,26 @@
 
 <section id="contact" class="contact-section">
   <div class="contact-links">
+    <div>
+      <span class="section-label light">Get in touch</span>
+      <h2>Let's build something <em>great</em> together</h2>
+      <p>Open to internships, networking opportunities, and technology collaborations.</p>
+    </div>
+      <a href="https://github.com/FIFFIE-droid" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-label">GitHub</span>
+        <span class="contact-link-value">github.com/FIFFIE-droid ↗</span>
+      </a>
+      <a href="https://linkedin.com/in/refilwe-jappie" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-label">LinkedIn</span>
+        <span class="contact-link-value">linkedin.com/in/refilwe-jappie ↗</span>
+      </a>
+ 
   <form id="contactForm" class="contact-form">
     <input
       type="text"
       id="name"
+       name="name" 
+       autocomplete="name"
       placeholder="Your Name"
       required
     >
@@ -298,12 +314,16 @@
     <input
       type="email"
       id="email"
+      name="email"
+      autocomplete="email"  
       placeholder="Your Email"
       required
     >
 
     <textarea
       id="message"
+      name="message"
+       autocomplete="off"
       placeholder="Your Message"
       rows="6"
       required

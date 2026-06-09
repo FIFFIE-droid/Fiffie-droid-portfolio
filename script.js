@@ -1,6 +1,4 @@
-// ==========================
-// CUSTOM CURSOR
-// ==========================
+
 const cursor = document.getElementById("cursor");
 if (cursor) {
   document.addEventListener("mousemove", e => {
@@ -13,9 +11,7 @@ if (cursor) {
   });
 }
 
-// ==========================
-// MOBILE MENU
-// ==========================
+
 const menuBtn  = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
@@ -24,17 +20,13 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => navLinks.classList.remove("active"));
 });
 
-// ==========================
-// SCROLL TO TOP — moved up so scroll listener can use it
-// ==========================
+
 const topBtn = document.getElementById("topBtn");
 if (topBtn) {
   topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 }
 
-// ==========================
-// SCROLL ANIMATIONS
-// ==========================
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
 }, { threshold: 0.12 });
@@ -44,9 +36,7 @@ document.querySelectorAll("section").forEach(s => {
   observer.observe(s);
 });
 
-// ==========================
-// ACTIVE NAV LINK
-// ==========================
+
 const sections = document.querySelectorAll("section[id]");
 const navItems = document.querySelectorAll(".nav-links a");
 
@@ -63,9 +53,7 @@ window.addEventListener("scroll", () => {
   if (topBtn) topBtn.style.display = window.scrollY > 500 ? "block" : "none";
 });
 
-// ==========================
-// TYPING EFFECT
-// ==========================
+
 const titles = [
   "Information Systems Student",
   "Future Network Engineer",
@@ -94,9 +82,7 @@ function typeEffect() {
 }
 typeEffect();
 
-// ==========================
-// CONTACT FORM
-// ==========================
+
 const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {

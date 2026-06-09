@@ -1,6 +1,4 @@
-/* ==========================
-   ROOT & RESET
-========================== */
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -26,9 +24,7 @@ body {
   cursor: none;
 }
 
-/* ==========================
-   CURSOR
-========================== */
+
 .cursor {
   width: 12px; height: 12px;
   background: var(--primary);
@@ -46,9 +42,7 @@ body {
 }
 @media (max-width: 768px) { .cursor { display: none; } body { cursor: auto; } }
 
-/* ==========================
-   NAVBAR
-========================== */
+
 header {
   position: fixed; top: 0; width: 100%; z-index: 1000;
 }
@@ -102,9 +96,7 @@ header {
   border-bottom: 1px solid var(--light);
 }
 
-/* ==========================
-   HERO
-========================== */
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -165,9 +157,6 @@ header {
   animation: fadeUp 0.8s ease 0.8s forwards;
 }
 
-/* ==========================
-   BUTTONS
-========================== */
 .btn-primary {
   background: var(--primary);
   color: #ffffff;
@@ -193,9 +182,7 @@ header {
 }
 .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
 
-/* ==========================
-   HERO IMAGE / PROFILE
-========================== */
+
 .hero-right {
   position: relative;
   opacity: 0;
@@ -253,9 +240,7 @@ header {
   margin-top: 4px;
 }
 
-/* ==========================
-   TICKER
-========================== */
+
 .ticker {
   background: var(--surface);
   border-top: 1px solid var(--light);
@@ -279,9 +264,7 @@ header {
 }
 .ticker-item::after { content: '·'; margin-left: 2.5rem; color: var(--primary); }
 
-/* ==========================
-   SECTIONS SHARED
-========================== */
+
 section { padding: 7rem 5%; border-top: 1px solid var(--light); }
 .container { max-width: 1100px; margin: 0 auto; }
 .section-label {
@@ -302,9 +285,7 @@ section { padding: 7rem 5%; border-top: 1px solid var(--light); }
 }
 .section-header h2 em { font-style: italic; color: var(--primary); }
 
-/* ==========================
-   ABOUT
-========================== */
+
 .about-grid {
   display: grid;
   grid-template-columns: 160px 1fr;
@@ -357,9 +338,7 @@ section { padding: 7rem 5%; border-top: 1px solid var(--light); }
   text-transform: uppercase;
 }
 
-/* ==========================
-   SKILLS GRID
-========================== */
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -386,9 +365,7 @@ section { padding: 7rem 5%; border-top: 1px solid var(--light); }
   color: var(--muted);
 }
 
-/* ==========================
-   GOALS
-========================== */
+
 .goals-layout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -424,9 +401,7 @@ section { padding: 7rem 5%; border-top: 1px solid var(--light); }
   line-height: 1.8;
 }
 
-/* ==========================
-   CERTIFICATIONS
-========================== */
+
 .cert-list {
   display: flex;
   flex-direction: column;
@@ -481,9 +456,7 @@ section { padding: 7rem 5%; border-top: 1px solid var(--light); }
 .cert-status.in-progress { background: transparent; color: var(--primary); border: 1px solid var(--primary); }
 .cert-status.planned-tag { background: transparent; color: var(--muted); border: 1px dashed var(--muted); }
 
-/* ==========================
-   PROJECTS
-========================== */
+
 .work-header { margin-bottom: 3rem; }
 .work-header h2 {
   font-family: 'Playfair Display', serif;
@@ -586,9 +559,7 @@ section { padding: 7rem 5%; border-top: 1px solid var(--light); }
   line-height: 1.7;
 }
 
-/* ==========================
-   CONTACT
-========================== */
+
 .contact-section {
   background: var(--surface);
   color: var(--text);
@@ -641,9 +612,7 @@ section { padding: 7rem 5%; border-top: 1px solid var(--light); }
   font-weight: 300;
 }
 
-/* ==========================
-   FOOTER
-========================== */
+
 footer {
   background: var(--ink);
   border-top: 1px solid var(--light);
@@ -660,9 +629,7 @@ footer p {
   color: var(--muted);
 }
 
-/* ==========================
-   SCROLL-TO-TOP
-========================== */
+
 #topBtn {
   display: none;
   position: fixed;
@@ -679,9 +646,7 @@ footer p {
 }
 #topBtn:hover { background: #2563EB; }
 
-/* ==========================
-   ANIMATIONS
-========================== */
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -704,9 +669,7 @@ section.show {
 }
 .hero { opacity: 1 !important; transform: none !important; }
 
-/* ==========================
-   MOBILE
-========================== */
+
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
   .section-label-col { display: none; }

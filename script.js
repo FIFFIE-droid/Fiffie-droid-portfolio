@@ -115,8 +115,10 @@ const contactForm = document.getElementById("contactForm");
 if (contactForm) {
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
+    console.log("form submitted");
 
     const status = document.getElementById("status");
+    status.textContent = "Sending...";
 
     try {
       const response = await fetch(

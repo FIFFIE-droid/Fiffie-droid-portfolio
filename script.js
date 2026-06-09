@@ -16,13 +16,21 @@ if (cursor) {
 // ==========================
 // MOBILE MENU
 // ==========================
-const menuBtn   = document.getElementById("menuBtn");
-const navLinks  = document.getElementById("navLinks");
+const menuBtn  = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
 
 menuBtn.addEventListener("click", () => navLinks.classList.toggle("active"));
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => navLinks.classList.remove("active"));
 });
+
+// ==========================
+// SCROLL TO TOP — moved up so scroll listener can use it
+// ==========================
+const topBtn = document.getElementById("topBtn");
+if (topBtn) {
+  topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+}
 
 // ==========================
 // SCROLL ANIMATIONS
@@ -52,7 +60,7 @@ window.addEventListener("scroll", () => {
     if (a.getAttribute("href") === "#" + current) a.classList.add("current");
   });
 
-  topBtn.style.display = window.scrollY > 500 ? "block" : "none";
+  if (topBtn) topBtn.style.display = window.scrollY > 500 ? "block" : "none";
 });
 
 // ==========================
@@ -87,29 +95,8 @@ function typeEffect() {
 typeEffect();
 
 // ==========================
-// SCROLL TO TOP
+// CONTACT FORM
 // ==========================
-const topBtn = document.getElementById("topBtn");
-topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-
-// ==========================
-// PROFILE PHOTO UPLOAD
-// ==========================
-const uploadInput = document.getElementById("upload");
-const profileLabel = document.getElementById("profile");
-
-uploadInput.addEventListener("change", function () {
-  const file = this.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = function () {
-    profileLabel.style.backgroundImage = `url(${reader.result})`;
-    profileLabel.style.backgroundSize = "cover";
-    profileLabel.style.backgroundPosition = "center";
-    profileLabel.textContent = "";
-  };
-  reader.readAsDataURL(file);
-});
 const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
@@ -121,20 +108,15 @@ if (contactForm) {
     status.textContent = "Sending...";
 
     try {
-      const response = await fetch(
-        "/.netlify/functions/sendEmail",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            message: document.getElementById("message").value
-          })
-        }
-      );
+      const response = await fetch("/.netlify/functions/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          message: document.getElementById("message").value
+        })
+      });
 
       if (response.ok) {
         status.textContent = "Message sent successfully!";

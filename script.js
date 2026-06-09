@@ -118,30 +118,27 @@ if (contactForm) {
 
     const status = document.getElementById("status");
 
-    const data = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value
-    };
-
-    status.textContent = "Sending...";
-
     try {
-      const response = await fetch("/.netlify/functions/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-
-      const result = await response.json();
+      const response = await fetch(
+        "/.netlify/functions/sendEmail",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value
+          })
+        }
+      );
 
       if (response.ok) {
         status.textContent = "Message sent successfully!";
         contactForm.reset();
       } else {
-        status.textContent = result.error || "Failed to send.";
+        status.textContent = "Failed to send message.";
       }
     } catch (error) {
       status.textContent = "Something went wrong.";
